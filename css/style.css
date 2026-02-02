@@ -1,0 +1,199 @@
+html {
+  scroll-behavior: smooth;
+}
+
+#skill-details {
+  transition: all 0.4s ease;
+}
+
+/* ===== Flip Card Styles (FIXED) ===== */
+
+.flip-card {
+  perspective: 1000px;
+  height: 100%;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+  padding: 2rem;
+  background: white;
+  color: #111827; /* gray-900 text for light mode */
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🌙 Dark mode version */
+.dark .flip-back {
+  background: #1f2937; /* gray-800 */
+  color: #f3f4f6;      /* gray-100 text */
+}
+
+/* Center the title */
+.flip-back h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Center the list block but keep text left-aligned */
+.flip-back ul {
+  max-width: 420px;
+  margin: 0 auto;
+  padding-left: 1.2rem; /* proper bullet spacing */
+  text-align: left;     /* fixes uneven staircase alignment */
+  list-style-position: outside;
+}
+
+.flip-back li {
+  margin-bottom: 0.75rem;
+}
+.skill-card {
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+section {
+  scroll-margin-top: 110px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  z-index: 1000;
+}
+
+/* 🌙 Dark mode navbar */
+.dark .navbar {
+  background: #111827; /* gray-900 */
+}
+
+
+.logo {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  position: relative;
+}
+
+.dark .nav-links a {
+  color: #f3f4f6; /* light gray text for dark mode */
+}
+
+
+.nav-links a:hover {
+  color: #4f46e5;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 24px;
+  height: 3px;
+  background: #222;
+  margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 1.5rem;
+
+    flex-direction: column;
+    gap: 1rem;
+
+    background: #ffffff;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  }
+  .dark .nav-links {
+    background: #1f2937;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+  }
+}
+main {
+  padding-top: 90px;
+}
+.theme-btn {
+  margin-left: 1rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #e5e7eb;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dark .theme-btn {
+  background: #374151;
+  color: white;
+}
+#experience {
+  scroll-margin-top: 140px;
+}
+.dark .burger span {
+  background: #f3f4f6;
+} 
