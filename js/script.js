@@ -1,42 +1,3 @@
-// Mobile menu toggle
-const menuBtn = document.getElementById("menu-btn");
-const menu = document.getElementById("mobile-menu");
-
-menuBtn.addEventListener("click", () => {
-  menu.classList.toggle("hidden");
-  menu.classList.toggle("flex");
-  menu.classList.toggle("flex-col");
-  menu.classList.toggle("absolute");
-  menu.classList.toggle("top-16");
-  menu.classList.toggle("right-4");
-  menu.classList.toggle("bg-white");
-  menu.classList.toggle("p-4");
-  menu.classList.toggle("shadow-lg");
-  menu.classList.toggle("rounded-lg");
-});
-
-// Close menu when link clicked (mobile)
-document.querySelectorAll("#mobile-menu a").forEach(link => {
-  link.addEventListener("click", () => {
-    if (window.innerWidth < 768) {
-      menu.classList.add("hidden");
-      menu.className = "hidden";
-    }
-  });
-});
-
-// Attach click event to skill cards
-document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".skill-card");
-
-  cards.forEach(card => {
-    card.addEventListener("click", () => {
-      const skill = card.dataset.skill;
-      toggleSkill(skill);
-    });
-  });
-});
-
 function toggleSkill(skill) {
   const skillsData = {
     python: [
@@ -105,13 +66,6 @@ function toggleSkill(skill) {
     }
   });
 }
-const burger = document.getElementById("burger");
-const navMenu = document.getElementById("navMenu");
-
-burger.addEventListener("click", () => {
-  navMenu.classList.toggle("show");
-});
-
 // close menu when clicking a link (mobile UX)
 document.querySelectorAll(".nav-links a").forEach(link => {
   link.addEventListener("click", () => {
