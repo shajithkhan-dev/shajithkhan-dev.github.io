@@ -16,8 +16,7 @@ html {
 .flip-inner {
   position: relative;
   width: 100%;
-  height: 100%;
-  min-height: 520px;
+  height: 520px;
   transition: transform 0.7s;
   transform-style: preserve-3d;
 }
@@ -36,6 +35,14 @@ html {
   left: 0;
   border-radius: 1rem;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 640px) {
+  .flip-inner {
+    height: 500px;
+  }
 }
 
 .flip-back {
@@ -197,3 +204,18 @@ main {
 .dark .burger span {
   background: #f3f4f6;
 } 
+.flip-front::-webkit-scrollbar,
+.flip-back::-webkit-scrollbar {
+  width: 6px;
+}
+
+.flip-front::-webkit-scrollbar-thumb,
+.flip-back::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 10px;
+}
+
+.dark .flip-front::-webkit-scrollbar-thumb,
+.dark .flip-back::-webkit-scrollbar-thumb {
+  background: #4b5563;
+}
