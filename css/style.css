@@ -219,3 +219,45 @@ main {
 .dark .flip-back::-webkit-scrollbar-thumb {
   background: #4b5563;
 }
+/* ===== GLOBAL PAGE SCROLLBAR ===== */
+
+/* Light Mode Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9; /* light gray */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94a3b8; /* slate */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Dark Mode Scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #0f172a; /* dark background */
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Firefox Support */
+html {
+  scrollbar-color: #94a3b8 #f1f5f9;
+}
+
+html.dark {
+  scrollbar-color: #334155 #0f172a;
+}
+
